@@ -1,5 +1,1 @@
-function test() {
-  console.log('Testing');
-}
-
-export {test};
+export {data, field, select} from './value-object';
