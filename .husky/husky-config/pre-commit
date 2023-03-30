@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-eslint . --fix && prettier --write
+ROOT_PATH=`pwd`
+npx eslint $ROOT_PATH --fix && npx prettier $ROOT_PATH --write
