@@ -2,10 +2,16 @@
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
-    "lib": ["es5", "es6", "dom"],
+    "lib": [
+      "es5",
+      "es6",
+      "dom"
+    ],
     "declaration": true,
     "outDir": "dist",
     "strict": true
   },
-  "include": ["./lib/esm/index.ts"]
+  "include": [
+    "./src/index.ts"
+  ]
 }

@@ -1,0 +1,11 @@
+// About Settings
+.eslintrc.json
+.gitignore
+.prettierrc.json
+.husky
+build.js
+tsconfig.json
+
+// About Files
+src
+node_modules
