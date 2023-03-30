@@ -17,27 +17,28 @@ function field<T, Result>(
   sourcePropertyName: string | number,
   preprocess: PreprocessFunction
 ): PropertyDecorator {
-  return () => ({
-    set: function () {
-      throw Error("You can't write Data Class's Property");
-    },
-    get: function () {
-      /**
-       * 만약 preprocess function 이 있는 경우 전처리 과정이 수행됨.
-       */
-      return preprocess
-        ? preprocess(this.data[sourcePropertyName])
-        : this.data[sourcePropertyName];
-    },
-    enumerable: true,
-    configurable: true,
-  });
+  return () =>
+    ({
+      set: function () {
+        throw Error("You can't write Data Class's Property");
+      },
+      get: function () {
+        /**
+         * 만약 preprocess function 이 있는 경우 전처리 과정이 수행됨.
+         */
+        return preprocess
+          ? preprocess(this.data[sourcePropertyName])
+          : this.data[sourcePropertyName];
+      },
+      enumerable: true,
+      configurable: true,
+    } as ThisType<{data: any}>);
 }
 
 function select(transform: TransformFunction) {
   return function (
-    a,
-    b,
+    a: any,
+    b: any,
     {
       value: fn,
       configurable,
